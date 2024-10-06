@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: wheat;
+            border: double 10px;
+            border-radius: 20px 50px;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 10x;
+            padding: 20px;
+            box-shadow: 2px 3px 4px 5px black;
+ 
+        }
+        .ty {
+            font-size: 24px;
+            margin-top: 20px;
+            box-shadow: 2px 3px 4px;
+            border-radius: 32px;
+            display: inline-block;
+            padding: 10px;
+            margin-top: 50px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            background-color: wheat;
+            border-radius: 32px;
+            padding: 20px;
+            box-shadow: 2px 3px 4px 5px;
+            
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+            border: transparent;
+            box-shadow: 3px 4px 5px;
+            border-radius: 32px;
+            margin-bottom: 10px;
+            
+        }
+        .uno{
+            color: white;
+            background-color: black;
+            box-shadow: 2px 3px 4px black;
+            display: inline-block;
+            border-radius: 32px;
+            padding: 10px;
+            margin: 10px
+        }
+      .ikaduha{
+          color: white;
+          background-color: black;
+          margin: 8px;
+          border-radius: 32px;
+          display: inline-block;
+          margin-top: 20px;
+          padding: 10px;
+          box-shadow: 2px 3px 4px black;
+      }
+      .ikatulo{
+          color: white;
+          background-color: black;
+          margin: 8px;
+          border-radius: 32px;
+          display: inline-block;
+          margin-top: 20px;
+          padding: 10px;
+          box-shadow: 2px 3px 4px black;
+       }
+       .ikaupat{
+          color: white;
+          background-color: black;
+          margin: 8px;
+          border-radius: 32px;
+          display: inline-block;
+          margin-top: 20px;
+          padding: 10px;
+          box-shadow: 2px 3px 4px black;
+    }
+    .hy{
+        margin: 20px;
+        margin-top: 10px;
+        background-color: black;
+        color: white;
+        border: inline-block;
+        border-radius: 50px 20px;
+        padding: 20px;
+        
+    }
+            
+    </style>
+</head>
+   <div class="hy">ASSIGNMENT 2</div>
+
+<body>
+    <div class="uno">TRIANGLE AREA</div>
+    <details>
+        <summary>Triangle Area Calculator</summary>
+    
+        <label for="base">Base: </label>
+        <input type='number' id='base' name='base' placeholder="Enter base" required><br>
+
+        <label for="height">Height: </label>
+        <input type='number' id='height' name='height' placeholder="Enter height" required>
+
+        <button onclick="calculateArea()">Calculate Area</button>
+
+        <div class="result" id="areaResult"></div>
+
+        <script>
+            function calculateArea() {
+                const base = parseFloat(document.getElementById("base").value);
+                const height = parseFloat(document.getElementById("height").value);
+                
+                if (isNaN(base) || isNaN(height) || base <= 0 || height <= 0) {
+                    document.getElementById("areaResult").textContent = "Please enter valid positive numbers for base and height.";
+                    return;
+                }
+                
+                const area = 0.5 * base * height;
+                document.getElementById("areaResult").textContent = `Area of the triangle: ${area}`;
+            }
+        </script>
+    </details>
+
+        <div class="ikaduha">AVERAGE CALCULATOR</div>
+    <details>
+        <summary>Average Calculator</summary>
+
+        <label for="num1">Number 1: </label>
+        <input type='number' id='num1' name='num1' placeholder="Enter number 1" required><br>
+
+        <label for="num2">Number 2: </label>
+        <input type='number' id='num2' name='num2' placeholder="Enter number 2" required><br>
+
+        <label for="num3">Number 3: </label>
+        <input type='number' id='num3' name='num3' placeholder="Enter number 3" required><br>
+
+        <label for="num4">Number 4: </label>
+        <input type='number' id='num4' name='num4' placeholder="Enter number 4" required><br>
+
+        <label for="num5">Number 5: </label>
+        <input type='number' id='num5' name='num5' placeholder="Enter number 5" required>
+
+        <button onclick="calculateAverage()">Calculate Average</button>
+
+        <div class="result" id="averageResult"></div>
+
+        <script>
+            function calculateAverage() {
+                const num1 = parseFloat(document.getElementById("num1").value);
+                const num2 = parseFloat(document.getElementById("num2").value);
+                const num3 = parseFloat(document.getElementById("num3").value);
+                const num4 = parseFloat(document.getElementById("num4").value);
+                const num5 = parseFloat(document.getElementById("num5").value);
+                
+                if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
+                    document.getElementById("averageResult").textContent = "Please enter valid numbers for all inputs.";
+                    return;
+                }
+
+                const sum = num1 + num2 + num3 + num4 + num5;
+                const average = sum / 5;
+                document.getElementById("averageResult").textContent = `Average of the numbers: ${average}`;
+            }
+        </script>
+    </details>
+        
+        <div class="ikatulo">CELSIUS TO FAHRENHEIT</div>
+    <details>
+    <summary>Celsius to Fahrenheit Converter</summary>
+
+    <label for="celsius">Celsius: </label>
+    <input type='number' id='celsius' name='celsius' placeholder="Enter Celsius value" required><br>
+
+    <button onclick="convertToFahrenheit()">Convert to Fahrenheit</button>
+
+    <div class="result" id="fahrenheitResult"></div>
+
+    <script>
+        function celsiusToFahrenheit(celsius) {
+            return (celsius * 9/5) + 32;
+        }
+
+        function convertToFahrenheit() {
+            const celsius = parseFloat(document.getElementById("celsius").value);
+
+            if (isNaN(celsius)) {
+                document.getElementById("fahrenheitResult").textContent = "Please enter a valid number.";
+                return;
+            }
+
+            const fahrenheit = celsiusToFahrenheit(celsius);
+            document.getElementById("fahrenheitResult").textContent = `${celsius.toFixed(2)}°C is ${fahrenheit.toFixed(2)}°F`;
+        }
+    </script>
+</details>
+        
+        <div class="ikaupat">PATTERN</div>
+        <details>
+  <summary>STAR PATTERN</summary>
+
+  <label for="patt"><br>PATTERN: </label>
+  <input type="number" id="patt" name="pat" placeholder="Input number">
+
+<button onclick="generatePattern()">CALCULATE</button>
+
+<pre id="output"></pre>
+
+<script>
+  function generatePattern() {
+    const x = parseInt(document.getElementById("patt").value);
+    let pattern = "";
+
+    for (let i = 1; i <= x; i++) {
+      pattern += "*".repeat(i) + "\n";
+    }
+
+    document.getElementById("output").textContent = pattern;
+  }
+</script>
+</details>
+
+</body>
+</html>
